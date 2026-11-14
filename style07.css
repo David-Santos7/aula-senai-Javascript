@@ -1,0 +1,20 @@
+html {
+            font-family: sans-serif;
+            font:bold
+        }
+
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        form[type="number"] {
+            width: 200px;
+        }
+
+        h3, h4 {
+            color: white;
+            padding: 3px;
+        }

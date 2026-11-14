@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration:solid;
+}
+
+header, main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button{
+    width: 80px;
+}
+#lampada {
+    cursor: pointer;
+}

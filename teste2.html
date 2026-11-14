@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Desafio 05 - Notas dos Alunos</title>
+</head>
+<body>
+
+    <h1>Sistema de Notas</h1>
+
+    <p>Clique no botão para verificar as notas de 10 alunos.</p>
+
+    <button onclick="verificarNotas()">
+        Verificar Notas
+    </button>
+
+    <h2>Resultados:</h2>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarNotas() {
+
+            let aprovados = 0;
+            let recuperacao = 0;
+            let reprovados = 0;
+            let resultados = "";
+
+            for (let aluno = 1; aluno <= 10; aluno++) {
+
+                let nota = Number(prompt(
+                    "Digite a nota do aluno " + aluno
+                ));
+
+                if (nota === 10) {
+                    resultados += "Aluno " + aluno +
+                        ": Aprovado com distinção!<br>";
+                    aprovados++;
+
+                } else if (nota >= 7) {
+                    resultados += "Aluno " + aluno +
+                        ": Aprovado!<br>";
+                    aprovados++;
+
+                } else if (nota >= 5) {
+                    resultados += "Aluno " + aluno +
+                        ": Recuperação!<br>";
+                    recuperacao++;
+
+                } else {
+                    resultados += "Aluno " + aluno +
+                        ": Reprovado!<br>";
+                    reprovados++;
+                }
+            }
+
+            document.getElementById("resultado").innerHTML =
+                resultados +
+                "<hr>" +
+                "Total de aprovados: " + aprovados + "<br>" +
+                "Total em recuperação: " + recuperacao + "<br>" +
+                "Total de reprovados: " + reprovados;
+        }
+    </script>
+
+</body>
+</html>
