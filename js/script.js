@@ -22,6 +22,11 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
         pokemonID = data.id
         console.log(pokemonID)
     })
+    .catch((error) => {
+        pokemon_image.src = ""
+        pokemon_name.innerText = "😔"
+        pokemon_number.innerText = "Não encontrado"
+    })
 }
     btn_search.addEventListener("click", (e) => {
         e.preventDefault()
@@ -34,8 +39,10 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
  })
 
   btn_prev.addEventListener("click", () => {
-    pokemonID--
+    if(pokemonID >= 2){
+        pokemonID--
     searchPokemon(pokemonID)
+    }
  })
 
- // fetch("https://pokeapi.co/api/v2/pokemon/ditto")
+searchPokemon(Math.floor(Math.random() * 1000) + 1)
