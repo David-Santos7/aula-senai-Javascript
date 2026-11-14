@@ -1,0 +1,15 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    gap: 20px;
+}
+
+.box {
+    background-color: darkseagreen;
+    padding: 25px;
+    width: 250px;
+}
+
+.box img{
+    width: 250px;
+}
